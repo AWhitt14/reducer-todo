@@ -1,0 +1,10 @@
+.item {
+    width: 45%;
+    cursor: pointer;
+  }
+
+  .itemcompleted {
+      background-color: green;
+      width: 45%;
+    cursor: pointer;
+  }

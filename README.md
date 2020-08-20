@@ -24,7 +24,7 @@ In this project, you build an app that let's you display a todo list from reduce
 - [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
 - [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
 - [ ] Push commits: git push origin `<firstName-lastName>`.
-
+ 
 ### Task 2a: Minimum Viable Product
 
 1. Set an initial state value through a reducer and render a list of todos from that state
