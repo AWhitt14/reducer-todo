@@ -1,4 +1,4 @@
-import { useState } from 'react'
+
 export const initialState =  [{
         task: 'Learn about reducers',
         completed: false,
@@ -11,23 +11,26 @@ export const initialState =  [{
     }
 ];
 
-export let [active, setActive] = useState({});
-export const TOGGLE_COMPLETED = 'TOGGLE_COMPLETED'
-
+export const TOGGLE_COMPLETED = 'TOGGLE_COMPLETED';
+export const REMOVE_COMPLETED = 'REMOVED_COMPLETED';
 
 export const toDoReducer =(state, action) => {
     switch (action.type) {
+        case REMOVE_COMPLETED:
+            return state;
         case TOGGLE_COMPLETED:
             return state.map(todo => {
-                if (todo.id === active.id) {
-                    console.log('worked');
+                if (todo.id === action.payload) {
+                    console.log('worked',todo);
                     return {...todo, completed: !todo.completed }
                 }
                 else {
-                    console.log('no');
                     return todo;
                 }
             });
+
+        default:
+            return state;
             
 
     }

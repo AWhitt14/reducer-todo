@@ -5,10 +5,9 @@ import './App.css';
 
 function App() {
  const [state, dispatch ] = useReducer(toDoReducer, initialState);
-
   return (
     <div className="App">
-      <ToDoList todos={state}/>
+      <ToDoList todos={state} dispatch={dispatch}/>
     </div> 
   );
 }
