@@ -11,17 +11,26 @@ export const initialState =  [{
     }
 ];
 
+export const newTask = {
+    task: '',
+    completed: false,
+    id: Date.now(),
+}
+
 export const TOGGLE_COMPLETED = 'TOGGLE_COMPLETED';
 export const REMOVE_COMPLETED = 'REMOVED_COMPLETED';
+export const ADD_TASK = 'ADD_TASK';
 
 export const toDoReducer =(state, action) => {
     switch (action.type) {
+        case ADD_TASK:
+            console.log(action.payload);
+            return [...state, action.payload];
         case REMOVE_COMPLETED:
             return state;
         case TOGGLE_COMPLETED:
             return state.map(todo => {
                 if (todo.id === action.payload) {
-                    console.log('worked',todo);
                     return {...todo, completed: !todo.completed }
                 }
                 else {

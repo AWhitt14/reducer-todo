@@ -1,6 +1,6 @@
-import React, { useReducer } from "react";
+import React from "react";
 import '../App.css';
-import {initialState, toDoReducer, TOGGLE_COMPLETED} from '../reducers/reducer';
+import { TOGGLE_COMPLETED} from '../reducers/reducer';
 
 const Todo = props => {
   

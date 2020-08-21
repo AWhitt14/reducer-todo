@@ -1,0 +1,31 @@
+import React,{ useState } from "react";
+import { ADD_TASK } from '../reducers/reducer';
+
+
+
+const ToDoForm = props => {
+    
+    const [taskName, setTaskName] = useState('')
+
+    const hc = e => {
+        setTaskName(e.target.value);
+        console.log(taskName);
+    }
+
+    const os = (e) => {
+        e.preventDefault();
+       props.dispatch({type: ADD_TASK, payload: {task: taskName, completed: false,
+        id: Date.now(),}});
+    }
+
+    return (
+      <div className='head'>
+        <form onSubmit={os}>
+            <input type='text' name='task' onChange={hc} />
+            <button>add task</button>
+        </form>
+      </div>
+    );
+  };
+  
+  export default ToDoForm;
